@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <header>
-            <h1><a href="/">Hi Penne!</a></h1>
-        </header>
-        {% for post in posts %}
-            {{ post }}
-        {% endfor %}
+    <header>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </header>
+
+    {% for post in posts %}
         <article>
-            <h2>edited1</h2>
-
-            <p>The alt attribute should reflect the image content, so users who cannot see the image get an understanding of what the image contains:</p>
-
-            <img src="C:\Personal\Family\anu\sanu.jpg" alt="Flowers in Chania" width="460" height="345">
-
-
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
-
-    </body>
+    {% endfor %}
 </html>
